@@ -8,36 +8,36 @@ namespace ClasseAtributoMetodo
         static void Main(string[] args)
         {
             // Primeiro Problema
-        /*    Triangulo x, y;
+            /*    Triangulo x, y;
 
-            x = new Triangulo();
-            y = new Triangulo();
+                x = new Triangulo();
+                y = new Triangulo();
 
-            Console.WriteLine("Entre com as medidas do triangulo X:");
-            x.A = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            x.B = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            x.C = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                Console.WriteLine("Entre com as medidas do triangulo X:");
+                x.A = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                x.B = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                x.C = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-            Console.WriteLine("Entre com as medidas do triangulo Y:");
-            y.A = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            y.B = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            y.C = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                Console.WriteLine("Entre com as medidas do triangulo Y:");
+                y.A = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                y.B = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                y.C = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-            double areaX = x.Area();
+                double areaX = x.Area();
 
-            double areaY = y.Area();
+                double areaY = y.Area();
 
-            Console.WriteLine("Área de X = " + areaX.ToString("f4", CultureInfo.InvariantCulture));
-            Console.WriteLine("Área de Y = " + areaY.ToString("f4", CultureInfo.InvariantCulture));
+                Console.WriteLine("Área de X = " + areaX.ToString("f4", CultureInfo.InvariantCulture));
+                Console.WriteLine("Área de Y = " + areaY.ToString("f4", CultureInfo.InvariantCulture));
 
-            if (areaX > areaY)
-            {
-                Console.WriteLine("Maior área: X");
-            }
-            else
-            {
-                Console.WriteLine("Maior área: Y");
-            }*/
+                if (areaX > areaY)
+                {
+                    Console.WriteLine("Maior área: X");
+                }
+                else
+                {
+                    Console.WriteLine("Maior área: Y");
+                }*/
 
             // Exercicio 01
 
@@ -109,7 +109,24 @@ namespace ClasseAtributoMetodo
             Console.Write("Quantidade no estoque: ");
             p.Quantidade = int.Parse(Console.ReadLine());
 
+            Console.WriteLine();
             Console.WriteLine("Dados do produto: " + p);
+
+            Console.WriteLine();
+            Console.Write("Digite o número de produtos a ser adicionados:");
+            int qte = int.Parse(Console.ReadLine());
+            p.AdicionarProdutos(qte);
+
+            Console.WriteLine();
+            Console.WriteLine("Dados atualizados: " + p);
+
+            Console.WriteLine();
+            Console.Write("Digite o número de produtos a ser removidos:");
+            qte = int.Parse(Console.ReadLine());
+            p.RemoverProdutos(qte);
+
+            Console.WriteLine();
+            Console.WriteLine("Dados atualizados: " + p);
         }
     }
 }
