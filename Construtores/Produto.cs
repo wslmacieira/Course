@@ -4,50 +4,73 @@ namespace Construtores
 {
     class Produto
     {
-        public string Nome;
-        public double Preco;
-        public int Quantidade;
+        private string _nome;
+        private double _preco;
+        private int _quantidade;
 
         public Produto() // construtor padrão
         {
-
+            _quantidade = 10;
         }
-        public Produto (string nome, double preco, int quantidade) // com 3 argumentos
+        public Produto(string nome, double preco) : this() // com 2 argumentos
         {
-            Nome = nome;
-            Preco = preco;
-            Quantidade = quantidade;
+            _nome = nome;
+            _preco = preco;
         }
 
-        public Produto (string nome, double preco) // com 2 argumentos
+        // com 3 argumentos
+        public Produto(string nome, double preco, int quantidade) : this(nome, preco)
         {
-            Nome = nome;
-            Preco = preco;
-            Quantidade = 10;
+            _quantidade = quantidade;
+        }
+
+        public string Nome
+        {
+            get { return _nome; }
+            set
+            {
+                if (value != null && value.Length > 1)
+                {
+                    _nome = value;
+                }
+            }
+        }
+
+        public double Preco
+        {
+            get { return _preco; }
+        }
+
+        public int Quantidade
+        {
+            get
+            {
+                return _quantidade;
+            }
         }
 
         public double ValorTotalEmEstoque()
         {
-            return Preco * Quantidade;
+            return _preco * _quantidade;
         }
 
         public void AdicionarProdutos(int quantidade)
         {
-            Quantidade += quantidade;
+            _quantidade += quantidade;
         }
 
-         public void RemoverProdutos(int quantidade)
+        public void RemoverProdutos(int quantidade)
         {
-            Quantidade -= quantidade;
+            _quantidade -= quantidade;
         }
 
         public override string ToString()
         {
-            return Nome
+            return _nome
                 + ", $"
-                + Preco.ToString("F2", CultureInfo.InvariantCulture)
+                + _preco.ToString("F2", CultureInfo.InvariantCulture)
                 + ", "
-                + Quantidade
+                + _quantidade
                 + " unidades, Total: $ "
                 + ValorTotalEmEstoque().ToString("F2", CultureInfo.InvariantCulture);
         }
