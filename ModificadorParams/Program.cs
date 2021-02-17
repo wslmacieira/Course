@@ -7,7 +7,7 @@ namespace ModificadorParams
         static void Main(string[] args)
         {
             // Sum 
-            int s1 = Calculator.Sum(2, 3 ); // com params não precisa instanciar
+            int s1 = Calculator.Sum(2, 3); // com params não precisa instanciar
             int s2 = Calculator.Sum(new int[] { 2, 3, 4 }); // mais verboso
 
             Console.WriteLine(s1);
@@ -21,13 +21,29 @@ namespace ModificadorParams
             //Console.WriteLine(a); 
 
             Calculator.Triple(ref a);// ref exige que a variavel seja iniciada
-            Console.WriteLine(a); 
+            Console.WriteLine(a);
 
             int b = 10;
             int triple;
 
             Calculator.Triple(b, out triple);
             Console.WriteLine(triple);
+
+            // foreach 
+
+            string[] vect = new string[] { "Maria", "Alex", "Bob" };
+
+            for (int i = 0; i < vect.Length; i++)
+            {
+                Console.WriteLine(vect[i]);
+            }
+
+            Console.WriteLine("--------------------------");
+
+            foreach (string obj in vect)
+            {
+                Console.WriteLine(obj);
+            }
         }
     }
 }
